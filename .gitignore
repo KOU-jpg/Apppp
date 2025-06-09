@@ -3,6 +3,7 @@
 /src/public/hot
 /src/public/storage
 /src/storage/app/public/images/
+src/storage/framework/views/
 /src/storage/*.key
 /src/vendor
 /src/.env
