@@ -11,11 +11,3 @@ RUN curl -sS https://getcomposer.org/installer | php \
     && composer self-update
 
 WORKDIR /var/www
-
-WORKDIR /var/www
-
-# ここで所有権をwww-dataに変更（ビルド時）
-RUN chown -R www-data:www-data /var/www
-
-# 以降の処理をwww-dataユーザーで実行
-USER www-data

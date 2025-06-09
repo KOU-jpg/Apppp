@@ -13,6 +13,7 @@
 @section('content')
     <h2>会員登録</h2>
     <form action="{{ route('register') }}" method="post" novalidate>
+        @csrf
         <label for="name">
             お名前
             @error('name')

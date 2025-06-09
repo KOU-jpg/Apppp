@@ -55,6 +55,12 @@ php artisan migrate
 php artisan db:seed
 ```
 
+9. ディレクトリ権限の設定
+Laravelがログやキャッシュを書き込めるよう、storageとbootstrap/cacheディレクトリの権限を設定してください
+``` bash
+chown -R www-data:www-data storage bootstrap/cache
+chmod -R 775 storage bootstrap/cache
+```
 
 **stripe CLI環境構築**
 1. docker-compose用.「.env」を作成する
@@ -69,7 +75,7 @@ STRIPE_PUBLIC_KEY=pk_test_*****
 STRIPE_SECRET_KEY=sk_test_*****
 ```
 4. Stripe CLIの認証（初回のみ）
-Stripe CLIを初めて利用する場合、以下のコマンドでStripeアカウントと認証します。
+Stripe CLIを初めて利用する場合、以下のコマンドでStripeアカウントと認証します
 ``` bash
 docker-compose exec stripe-cli stripe login
 ```
